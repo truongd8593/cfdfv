@@ -49,7 +49,7 @@ endif
 # GNU
 #---------------------------------------------------------------------------------------------------------------------------------#
 ifeq ($(findstring GNU,$(ENVIRONMENT)),GNU)
-  FC=gfortran-8
+  FC=gfortran
   FCFLAGS=-fdefault-real-8 -fdefault-double-8 -fbackslash
   FLFLAGS=-fdefault-real-8 -fdefault-double-8 -fbackslash
   ifeq ($(findstring DEBUG,$(ENVIRONMENT)),DEBUG)
