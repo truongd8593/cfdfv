@@ -15,6 +15,9 @@ cgns:
 		if [ ! -d cgnslib_$(CGNS_VERSION) ] ; then \
 			tar -xzf cgnslib_$(CGNS_VERSION)-$(CGNS_SUBVERSION).tar.gz 1>/dev/null ; \
 		fi ; \
+		if [ -d cgnslib_$(CGNS_VERSION)/build ] ; then \
+			rm -rf cgnslib_$(CGNS_VERSION)/build ; \
+		fi ; \
 		mkdir cgnslib_$(CGNS_VERSION)/build && cd cgnslib_$(CGNS_VERSION)/build &&  FC='$(FC)' cmake -DENABLE_FORTRAN=ON -DENABLE_64BIT=ON -DCMAKE_INSTALL_PREFIX=../LINUX64 -DCGNS_BUILD_SHARED=OFF -DENABLE_LEGACY=ON .. && $(MAKE) && $(MAKE) install ; \
 	fi ; \
 
